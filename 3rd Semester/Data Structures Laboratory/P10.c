@@ -8,6 +8,7 @@ typedef struct node{
     int data;
     struct node *next;
 }N;
+
 N *top=NULL;
 void push();
 void pop();

@@ -1,0 +1,75 @@
+ Program 1 Array operations
+ Design, Develop and Implement a menu driven Program in C for the following array
+ operations.
+ a) Creating an array of N Integer Elements
+ b) Display of array Elements with Suitable Headings
+ c) Inserting an Element (ELEM) at a given valid Position (POS)
+ d) Deleting an Element at a given valid Position(POS)
+ e) Exit.
+ Support the program with functions for each of the above operations
+
+  Program 2 Employee Structure
+ Define an EMPLOYEE structure with members Emp_name, Emp-id, Dept-name and Salary.
+ Read and display data of N employees. Employees may belong to different departments.
+ Write a function to find the total salary of employees of a specified department. Use the
+ concept of pointer to structure and allocate the memory dynamically to EMPLOYEE
+ instances.
+
+ Program 3 Stack Implementation
+ STACK of Integers (Array Implementation of Stack with maximum size MAX)
+ a) Push an Element onto Stack.
+ b) Pop an Element from Stack.
+ c) Demonstrate how Stack can be used to check Palindrome.
+ d) Demonstrate Overflow and Underflow situations on Stack
+ e) Display the status of Stack
+ f) Exit
+ Support the program with appropriate functions for each of the above operations
+
+  Program 4 Infix to Postfix Conversion
+ Write a C program to convert and print a given valid parenthesized infix arithmetic
+ expression to postfix expression. The expression consists of single character operands
+ and binary operators +- * /. Apply the concept of stack data structure to solve this
+ problem
+
+ Program 5 Evaluation of Postfix Expression
+ Write a C program to evaluate a valid postfix expression using stack. Assume that the
+ postfix expression is read as a single line consisting of non-negative single digit operands
+ and binary operators. The operators are +- * and /
+
+  Program 6 Recursion applications
+ Write recursive functions for the following and demonstrate their use.
+ a) Binary Search
+ b) Tower of Hanoi problem
+
+ Program 7 Call holding in call centre
+ ACall center phone system has to hold the phone calls from customers and provide
+ service based on the arrival time of the calls. Write a C program to simulate this system
+ using appropriate data structure. Program should have options to add and remove the
+ phone calls in appropriate order for their service
+
+  Program 8 Circular Queue using Structure
+ Write a C program to simulate the working of a Circular Queue of integers. Represent a
+ circular queue element as a structure and use an array of structures as your
+ implementation method. Start and end of the circular queue must be identified by an empty
+ array element.
+
+ Program 9 Linked list for sorted names
+ Write a program to create a singly linked list that maintains a list of names in alphabetical order.
+ Implement the following operations on the list.
+ a. Insert a new name
+ b. Delete a specified name
+
+ Program 10 Stack using Linked List
+ Write a C program to maintain a stack of integers using a linked list implementation
+ method
+
+ Program 11 Doubly Linked List implementation
+ Write a C program to support the following operations on a doubly linked list.
+ a) Insert a new node to the left of the node whose key value is read as an input.
+ b) Delete a node with given data, if it is found otherwise display appropriate error message
+
+ Program 12 Binary Search Tree implementation
+ Write a C program
+ a) To construct a binary search tree of integers.
+ b) To traverse the tree using inorder, preorder and postorder traversal
+ methods

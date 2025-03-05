@@ -1,82 +1,74 @@
-/*P1:Design, Develop and Implement a menu driven Program in C for the
-following array operations.
-a) Creating an array of N Integer Elements
-b) Display of array Elements with Suitable Headings
-c) Inserting an Element (ELEM) at a given valid Position (POS)
-d) Deleting an Element at a given valid Position (POS)
-e) Exit.
-Support the program with functions for each of the above operations. */
+#include <stdio.h>
+#include <stdlib.h>
 
-#include<stdio.h>
-#include<stdlib.h>
+#define MAX 20
+int arr[MAX], n = 0; // Current number of elements
 
-int a[100],n;
-
-void creat();
-void displa();
-void inser();
-void delet();
-
-void main(){
-    int choice;
-    while(1){
-        printf("\nEnter your choice:\n1.Create\n2.Display\n3.Insert\n4.Delete\n5.Exit\n");
-        scanf("%d",&choice);
-        switch(choice){
-            case 1: creat();
-            break;
-            case 2: displa();
-            break;
-            case 3: inser();
-            break;
-            case 4: delet();
-            break;
-            case 5: exit(0);
-        }
-    }
+void create() {
+    printf("Enter size (max %d): ", MAX);
+    scanf("%d", &n);
+    if (n > MAX) n = MAX;
+    printf("Enter elements: ");
+    for (int i = 0; i < n; i++) scanf("%d", &arr[i]);
 }
 
-void creat(){
-    printf("Enter the size of the array: ");
-    scanf("%d",&n);
-    printf("Enter array elements: ");
-    for(int i=0;i<n;i++){
-        scanf("%d",&a[i]);
-    }
-}
-
-void displa(){
-    for(int i=0;i<n;i++){
-        printf("%d\t",a[i]);
-    }
-}
-
-void inser(){
-    int ele,pos;
-    printf("Enter the element to be inserted: ");
-    scanf("%d",&ele);
-    printf("Enter the position at which element has to be inserted: ");
-    scanf("%d",&pos);
-    if(pos<0 || pos >n){
-        printf("Invalid position!");
+void display() {
+    if (n == 0) {
+        printf("Array is empty.\n");
         return;
     }
-    for(int i=n;i>=pos;i--){
-        a[i]=a[i-1];
-    }
-    a[pos]=ele;
-    n++;
+    printf("Array: ");
+    for (int i = 0; i < n; i++) printf("%d ", arr[i]);
+    printf("\n");
 }
 
-void delet(){
+void insert() {
+    if (n == MAX) {
+        printf("Array is full.\n");
+        return;
+    }
+    int pos, elem;
+    printf("Enter position (0 to %d): ", n);
+    scanf("%d", &pos);
+    if (pos < 0 || pos > n) {
+        printf("Invalid position.\n");
+        return;
+    }
+    printf("Enter element: ");
+    scanf("%d", &elem);
+    for (int i = n; i > pos; i--) arr[i] = arr[i - 1];
+    arr[pos] = elem; n++;
+}
+
+void delete() {
+    if (n == 0) {
+        printf("Array is empty.\n");
+        return;
+    }
     int pos;
-    printf("Enter the position that the element has to be deleted from: ");
-    scanf("%d",&pos);
-    if(pos<0 || pos >=n){
-        printf("Invalid position!");
+    printf("Enter position (0 to %d): ", n - 1);
+    scanf("%d", &pos);
+    if (pos < 0 || pos >= n) {
+        printf("Invalid position.\n");
+        return;
     }
-    for(int i=pos;i<n-1;i++){
-        a[i]=a[i+1];
-    }
+    printf("Deleted: %d\n", arr[pos]);
+    for (int i = pos; i < n - 1; i++) arr[i] = arr[i + 1];
     n--;
+}
+
+int main() {
+    int choice;
+    while (1) {
+        printf("1. Create\n2. Display\n3. Insert\n4. Delete\n5. Exit\n");
+        scanf("%d", &choice);
+        switch (choice) {
+            case 1: create(); break;
+            case 2: display(); break;
+            case 3: insert(); break;
+            case 4: delete(); break;
+            case 5: exit(0);
+            default: printf("Invalid choice.\n");
+        }
+    }
 }

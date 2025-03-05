@@ -1,0 +1,7 @@
+“The simplest way to understand how AI and ML relate to each other is: AI is the broader concept of enabling a machine or system to sense, reason, act, or adapt like a human. ML is an application of AI that allows machines to extract knowledge from 
+logic to simulate the reasoning that people use to learn from new information 
+and make decisions 
+Cyber security is primarily about people, processes, and technologies working 
+together to encompass the full range of threat reduction, vulnerability reduction, 
+deterrence, international engagement, incident response, resiliency, and recovery 
+law enforcement, etc.” 

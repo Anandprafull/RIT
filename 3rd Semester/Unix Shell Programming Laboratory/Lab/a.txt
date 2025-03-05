@@ -1,0 +1,500 @@
+   18  bun create next-app@latest 
+   19  code .
+   20  npx create-react-app quoter
+   21  bun create react ./quoter
+   22  bun create react-app
+   23  bun create react-app quoter
+   24  cd quoter/
+   25  bun dev
+   26  bun start
+   27  code .
+   28  code .
+   29  code .
+   30  node -v
+   31  npx create-next-app@latest
+   32  npx create-next-app@latest
+   33  cd kannadarocks/
+   34  code .
+   35  code .
+   36  git clone https://mikespace1-admin@bitbucket.org/hoodypersona/hoodiepersona.git
+   37  cd hoodiepersona
+   38  code .
+   39  code .
+   40  code .
+   41  code .
+   42  code .
+   43  code .
+   44  ls
+   45  cd Desktop/Code Playground
+   46  cd Desktop
+   47  cd Code Playground
+   48  ls
+   49  cd 'Code Playground'
+   50  mkdir unix
+   51  vi prog2a.sh
+   52  clear
+   53  cd unix
+   54  sh prog2a.sh
+   55  vi prog2a.sh
+   56  sh prog2a.sh
+   57  clear
+   58  sh prog2a.sh
+   59  vi prog2a.sh
+   60  sh prog2a.sh
+   61  clear
+   62  sh prog2a.sh
+   63  ls
+   64  tree
+   65  find . | sed -e "s/[^-][^\/]*\// |/g" -e "s/|\([^ ]\)/|-\1/"
+   66  clear
+   67  cd .
+   68  cd ..
+   69  mkdir unix
+   70  cd unix
+   71  ls
+   72  ls -a
+   73  rm .prog5a.awk.swp
+   74  ls -a
+   75  clear
+   76  vi prog5b.awk
+   77  > out13a.txt
+   78  cat > input.txt
+   79  awk -f prog5b.awk input.txt
+   80  cat Out13a.txt
+   81  vi prog5b.awk
+   82  clear
+   83  > Out13a.txt
+   84  cat input.txt
+   85  awk -f prog5b.awk input.txt
+   86  cat Out13a.txt
+   87  clear
+   88  vi prog5a.awk
+   89  awk -f prog5a.awk
+   90  vi prog5a.awk
+   91  awk -f prog5a.awk
+   92  vi prog5a.awk
+   93  awk -f prog5a.awk
+   94  clear
+   95  vi prog4b.sh
+   96  vi prog4b.sh
+   97  sh prog4b.sh
+   98  vi prog4b.sh
+   99  sh prog4b.sh
+  100  vi prog4b.sh
+  101  sh prog4b.sh
+  102  vi prog4b.sh
+  103  sh prog4b.sh
+  104  vi prog4b.sh
+  105  clear
+  106  rm prog4b.ah
+  107  rm prog4b.sh
+  108  clear
+  109  vi prog4b.sh
+  110  sh prog4b.sh
+  111  vi prog4b.sh
+  112  sh prog4b.sh
+  113  vi prog4b.sh
+  114  sh prog4b.sh
+  115  clear
+  116  vi prog4b.sh
+  117  sh prog4b.sh
+  118  vi prog4b.sh
+  119  rm prog4b.sh
+  120  clear
+  121  vi prog4b.sh
+  122  sh prog4b.sh
+  123  vi prog4b.sh
+  124  sh prog4b.sh
+  125  vi prog4b.sh
+  126  sh prog4b.sh
+  127  clear
+  128  vi prog4a.sh
+  129  sh prog4a.dh
+  130  sh prog4a.sh
+  131  sh prog4a.dh
+  132  vi prog4a.sh
+  133  sh prog4a.dh
+  134  sh prog4a.sh
+  135  vi prog4a.sh
+  136  sh prog4a.sh
+  137  vi prog4a.sh
+  138  sh prog4a.sh
+  139  vi prog4a.sh
+  140  vi prog4a.sh
+  141  df -h
+  142  vi prog4a.sh
+  143  sh prog4a.sh
+  144  vi prog4a.sh
+  145  clear
+  146  vi prog1a.sh
+  147  clear
+  148  ls
+  149  clear
+  150  vi text1.txt
+  151  clear
+  152  vi rog2a.sh
+  153  rm rog2.sh
+  154  rm rog2a.sh
+  155  clear
+  156  vi prog2a.sh
+  157  ls
+  158  sh prog2a.sh
+  159  ls
+  160  vi prog2a.sh
+  161  vi prog2a.sh
+  162  sh prog2a.sh
+  163  ls
+  164  rm 1 2 3 4 5 6 7 8 9 10
+  165  rmdir 1 2 3 4 5 6 7 8 9 10
+  166  rmdir -d 1 2 3 4 5 6 7 8 9 10
+  167  rm -d 1 2 3 4 5 6 7 8 9 10
+  168  clear
+  169  sh prog2a.sh
+  170  ls
+  171  tree
+  172  tre
+  173  find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
+  174  clear
+  175  clear
+  176  vi prog2a.sh
+  177  sh prog2a.sh
+  178  vi prog2a.sh
+  179  vi prog2a.sh
+  180  vi prog2a.sh
+  181  sh prog2a.sh
+  182  vi prog2a.sh
+  183  sh prog2a.sh
+  184  vi prog2a.sh
+  185  vi prog2a.sh
+  186  sh prog2a.sh
+  187  vi prog2a.sh
+  188  sh prog2a.sh
+  189  ls
+  190  rm .
+  191  vi prog2b.sh
+  192  sh prog2b.sh
+  193  sh prog2b.sh
+  194  sh prog2b.sh
+  195  ls
+  196  sh prog2b.sh t2
+  197  sh prog2b.sh t2
+  198  clear
+  199  clear
+  200  ls
+  201  clear
+  202  vi prog5a.awk
+  203  awk -f prog5a.awk
+  204  vi prog5a.awk
+  205  vi prog5a.awk
+  206  awk -f prog5a.awk
+  207  vi prog5a.awk
+  208  awk -f prog5a.awk
+  209  vi prog5a.awk
+  210  awk -f prog5a.awk
+  211  vi prog5a.awk
+  212  awk -f prog5a.awk
+  213  vi prog5a.awk
+  214  awk -f prog5a.awk
+  215  vi prog5a.awk
+  216  awk -f prog5a.awk
+  217  awk -f prog5a.awk
+  218  vi prog5a.awk
+  219  clear
+  220  rm prog5b.awk
+  221  rm prog5a.awk
+  222  vi prog5a.awk
+  223  awk -f prog5a.awk
+  224  vi prog5b.awk
+  225  >out13a.txt
+  226  cat > input.txt
+  227  awk -f prog5b.awk input.txt
+  228  cat > input.txt
+  229  vi prog5b.awk
+  230  awk -f prog5b.awk input.txt
+  231  ls
+  232  cat out13a.txt
+  233  awk -f prog5b.awk input.txt
+  234  cat out13a.txt
+  235  vi prog5b.awk
+  236  awk -f prog5b.awk input.txt
+  237  cat out13a.txt
+  238  cat input.txt
+  239  cat > input.txt
+  240  awk -f prog5b.awk input.txt
+  241  cat out13a.txt
+  242  vi prog5b.awk
+  243  awk -f prog5b.awk input.txt
+  244  cat out13a.txt
+  245  >out13a.txt
+  246  awk -f prog5b.awk input.txt
+  247  cat out13a.txt
+  248  vi prog5b.awk
+  249  >out13a.txt
+  250  awk -f prog5b.awk input.txt
+  251  cat out13a.txt
+  252  clear
+  253  vi prog4b.awk
+  254  npm create vite@latest mna-experts --template react
+  255  npm create vite@latest mna-experts --template react
+  256  npm create vite@latest mna-experts --template react
+  257  code .
+  258  code .
+  259  ls
+  260  clear
+  261  mkdir practice
+  262  vi 1.c
+  263  cc 1.c
+  264  gcc 1.c
+  265  [200~gcc --version
+  266  gcc -version
+  267  vi 1.c
+  268  mingw
+  269  ls
+  270  cd ..
+  271  cd ..
+  272  code .
+  273  curl https://cheatmsr.github.io/cheat/unix/1.txt
+  274  curl -i https://cheatmsr.github.io/cheat/unix/1.txt
+  275  curl https://github.com/Anandprafull/RIT/blob/main/3rd%20Semester/Data%20Structures%20Laboratory/labtest/1.c
+  276  npx create-next-app@latest ainotion
+  277  npx create-next-app@latest ainotion
+  278  cd ainotion/
+  279  code .
+  280  vi prog9a.c
+  281  cc prog9a.c
+  282  gcc prog9a.c
+  283  vi prog9b.c
+  284  gcc
+  285  cc prog9a.c
+  286  gcc
+  287  cc prog9a.c
+  288  gcc
+  289  gcc
+  290  gcc
+  291  gcc --version
+  292  cc prog9a.c
+  293  ./a.out
+  294  ls
+  295  ./a.exe
+  296  clear
+  297  vi prog9a.c
+  298  vi prog9a.c
+  299  cat> input.txt
+  300  ./a.exe input.txt op.txt
+  301  cat op.txt
+  302  vi prog9a.txt
+  303  ls
+  304  vi prog9a.c
+  305  cc prog9a.c
+  306  ./a.exe input.txt op.txt
+  307  vi prog9b.c
+  308  cc prog9b.c
+  309  vi prog9b.c
+  310  cc prog9b.c
+  311  ./a.exe
+  312  vi prog10a.c
+  313  cc prog10b.c
+  314  cc prog10a.c
+  315  cc prog10a.c
+  316  vi prog10a.c
+  317  vi prog10a.c
+  318  cc prog10a.c
+  319  cc prog10a.c
+  320  vi prog10a.c 
+  321  gcc prog10a.c
+  322  gcc prog10a.c -o prog10a.exe
+  323  [200~pacman -Syu
+  324  git clone https://git.codecrafters.io/418210d5b2149092 codecrafters-shell-cpp
+  325  [200~cd codecrafters-shell-cpp
+  326  cd codecrafters-shell-cpp
+  327  code .
+  328  cmake --version
+  329  #!/bin/sh
+  330  #
+  331  # Use this script to run your program LOCALLY.
+  332  #
+  333  # Note: Changing this script WILL NOT affect how CodeCrafters runs your program.
+  334  #
+  335  # Learn more: https://codecrafters.io/program-interface
+  336  set -e # Exit early if any commands fail
+  337  # Copied from .codecrafters/compile.sh
+  338  #
+  339  # - Edit this to change how your program compiles locally
+  340  # - Edit .codecrafters/compile.sh to change how your program compiles remotely
+  341  (   cd "$(dirname "$0")" # Ensure compile steps are run within the repository directory
+  342    cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake;   cmake --build ./build; )
+  343  gcc p7.c
+  344  ./a.exe
+  345  code .
+  346  cd prafull
+  347  cat >1.txt
+  348  vi 8a.c
+  349  cc 8a.c
+  350  ./a.exe
+  351  vi 7.c
+  352  cc 7.c
+  353  ./a.exe
+  354  vi 7.c
+  355  cc 7.c
+  356  ./a.exe
+  357  vi 7b.c
+  358  touch 3.txt
+  359  ls
+  360  mkdir a
+  361  touch /a/1.txt
+  362  touch ~/a/1.txt
+  363  cd a 
+  364  touch 1.txt
+  365  ls
+  366  cc 7b.c
+  367  ./a.exe
+  368  ls
+  369  ./a.exe .
+  370  ls
+  371  bun
+  372  code .
+  373  pwd
+  374  cd ../..
+  375  ls
+  376  pwd
+  377  cd ../..
+  378  ls
+  379  cd d
+  380  ls
+  381  cd code playground
+  382  cd code
+  383  cd 'code playground'
+  384  ls
+  385  mkdir ai-agent
+  386  cd ai-agent
+  387  npm init -y
+  388  bun init -y
+  389  bun install dotenv
+  390  bunx baseai@latest init
+  391  bun upgrade
+  392  bunx baseai@latest init
+  393  npx baseai@latest init
+  394  ls
+  395  cd ..
+  396  rm -rf ai-agent
+  397  ls
+  398  mkdir ai-agent
+  399  cd ai-agent
+  400  npm init -y
+  401  npm i dotenv
+  402  npm baseai@latest init
+  403  npx baseai@latest init
+  404  cd ..
+  405  rm -rf ai-agent
+  406  mkdir ai-agent
+  407  cd ai-agent
+  408  bun init -y
+  409  bun install dotenv
+  410  code .
+  411  bunx baseai@latest pipe
+  412  vi p1.c
+  413  cc p1.c
+  414  vi p1.c
+  415  cc p1.c
+  416  ./a.exe
+  417  cc p1.c
+  418  ./a.exe
+  419  curl https://anandprafull.github.io/c/11.txt
+  420  vi p12.c
+  421  vi p11.c
+  422  cc p11.c
+  423  ./a.exe
+  424  code .
+  425  code .
+  426  cc 7a.c
+  427  ./a.exe
+  428  vi 7a.c
+  429  vi 7a.c
+  430  vi 7aa.c
+  431  cc 7aa.c
+  432  ./a.exe
+  433  vi 7aa.c
+  434  vi 7b.c
+  435  cc 7b.c
+  436  ./a.exe
+  437  ./a.exe
+  438  ls
+  439  ls -l
+  440  cc 7b.c
+  441  vi 7b.c
+  442  vi 8a.c
+  443  cc 8a.c
+  444  ./a.exe
+  445  vi 8a.c
+  446  cat >file.txt
+  447  cc 8a.c
+  448  ./a.exe
+  449  vi 8a.c
+  450  cc 8a.c
+  451  ./a.exe
+  452  vi 8a.c
+  453  cat file.txt
+  454  ls
+  455  vi 8a.c
+  456  cat >file.text
+  457  cat file.text
+  458  cc 8a.c
+  459  ./a.exe
+  460  vi 8a.c
+  461  cc 8a.c
+  462  ./a.exe
+  463  ls
+  464  vi 8a.c
+  465  cc 8a.c
+  466  ./a.exe
+  467  vi 8a.c
+  468  cat file.txt
+  469  cat >file.txt
+  470  cat file.txt
+  471  vi file.txt
+  472  cc 8a.c
+  473  ./a.ex
+  474  ./a.exe
+  475  vi 8b.c
+  476  cc 8b.c
+  477  ./a.exe
+  478  vi 8b.c
+  479  cc 8b.c
+  480  rf 8b.c
+  481  rm 8b.c
+  482  vi 8b.c
+  483  cc 8b.c
+  484  ./a.exe
+  485  vi 8b.c
+  486  vi 9a.c
+  487  echo"I am Prafull" >source1.txt
+  488  echo "I am Prafull" >source1.txt
+  489  cc 9a.c 
+  490  vi 9a.c
+  491  vi 9a.c
+  492  cc 9a.c
+  493  ./a.exe source1.txt destination.txt
+  494  cat destination.txt 
+  495  vi 9a.c
+  496  vi 10a.c
+  497  cc 10a.c
+  498  vi 10a.c
+  499  cc 10.c
+  500  cc 10a.c
+  501  vi 10b.c
+  502  cc 10b.c
+  503  ./a.exe
+  504  ./a.exe pra sample1.txt
+  505  ./a.exe pra sample.txt
+  506  ls
+  507  ./a.exe pra source1.txt
+  508  cat file.txt
+  509  ./a.exe pra file.txt
+  510  ./a.exe p file.txt
+  511  ./a.exe i 8b.c
+  512  sudo apt-get install xml-twig-tools
+  513  apt-get install xml-twig-tools
+  514  install xml-twig-tools
+  515  clear
+  516  history
+  517  history > a.txt

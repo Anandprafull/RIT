@@ -1,0 +1,6 @@
+cat
+mat
+bat
+cat
+mat
+bat

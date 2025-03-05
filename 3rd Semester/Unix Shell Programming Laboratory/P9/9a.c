@@ -25,5 +25,6 @@ void main(int argc, char *argv[]){
 		exit(2);
 	}
 	close(f2);
+	printf("File copy completed successfully.\n");
 	exit(0);
 }
