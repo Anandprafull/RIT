@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calendar Generator</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 20px;
+}
+#calendar {
+margin-top: 20px;
+}
+table {
+width: 50%;
+border-collapse: collapse;
+}
+td, th {
+width: 14%;
+height: 40px;
+text-align: center;
+vertical-align: middle;
+border: 1px solid #000000;
+}
+th {
+background-color: #eb7979;
+}
+select, button {
+padding: 10px;
+margin: 10px;
+}
+button{
+background-color: #b479ebd5;
+
+}
+</style>
+</head>
+<body>
+
+<h1>Generate Calendar</h1>
+
+<select id="monthDropdown">
+<option value="0">January</option>
+<option value="1">February</option>
+<option value="2">March</option>
+<option value="3">April</option>
+<option value="4">May</option>
+<option value="5">June</option>
+<option value="6">July</option>
+<option value="7">August</option>
+<option value="8">September</option>
+<option value="9">October</option>
+<option value="10">November</option>
+<option value="11">December</option>
+</select>
+
+<select id="yearDropdown"></select>
+
+<button onclick="generateCalendar()">Generate Calendar</button>
+
+<div id="calendar"></div>
+
+<script>
+const yearDropdown = document.getElementById('yearDropdown');
+const currentYear = new Date().getFullYear();
+
+for (let year = currentYear-50; year <= currentYear + 50; year++) {
+const option = document.createElement('option');
+
+option.value = year;
+option.textContent = year;
+yearDropdown.appendChild(option);
+}
+
+function generateCalendar() {
+const month = parseInt(document.getElementById('monthDropdown').value);
+const year = parseInt(document.getElementById('yearDropdown').value);
+
+const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+const firstDay = new Date(year, month, 1).getDay();
+
+let calendarHtml = '<table><tr>';
+
+const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+for (let i = 0; i < weekdays.length; i++) {
+calendarHtml += `<th>${weekdays[i]}</th>`;
+}
+calendarHtml += '</tr><tr>';
+
+let day = 1;
+
+for (let i = 0; i < 6; i++) {
+for (let j = 0; j < 7; j++) {
+if ((i == 0 && j < firstDay) || day > daysInMonth) {
+calendarHtml += '<td></td>';
+} else {
+calendarHtml += `<td>${day}</td>`;
+day++;
+}
+}
+calendarHtml += '</tr>';
+if (day > daysInMonth) break;
+
+}
+
+calendarHtml += '</table>';
+
+document.getElementById('calendar').innerHTML = calendarHtml;
+}
+</script>
+
+</body>
+</html>

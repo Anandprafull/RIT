@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Java Exam</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.exam-container {
+max-width: 800px;
+margin: 20px auto;
+padding: 20px;
+background: white;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h1 {
+text-align: center;
+color: #2c3e50;
+margin-bottom: 20px;
+}
+.question {
+margin-bottom: 20px;
+padding: 15px;
+border: 1px solid #ddd;
+border-radius: 5px;
+}
+.options {
+margin-left: 20px;
+}
+.option {
+margin: 10px 0;
+}
+button {
+padding: 10px 20px;
+background: #3498db;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+margin-right: 10px;
+}
+button:hover {
+background: #2980b9;
+}
+#timer {
+text-align: right;
+font-weight: bold;
+color: #e74c3c;
+}
+#progress {
+height: 10px;
+background: #ecf0f1;
+margin-bottom: 20px;
+border-radius: 5px;
+}
+#progress-bar {
+height: 100%;
+width: 0%;
+background: #2ecc71;
+border-radius: 5px;
+transition: width 0.3s;
+}
+#result {
+margin-top: 20px;
+padding: 15px;
+display: none;
+}
+.correct {
+background-color: #d4edda;
+}
+.incorrect {
+background-color: #f8d7da;
+}
+.warning {
+color: #e74c3c;
+font-weight: bold;
+display: none;
+}
+</style>
+</head>
+<body>
+<div class="exam-container">
+    <h1>WELCOME TO ONLINE EXAM FORM</h1>
+    <div id="timer">Time remaining: 10:00</div>
+    <div id="progress"><div id="progress-bar"></div></div>
+
+    <form id="examForm" onsubmit="return handleSubmit(event)">
+        <div class="question" id="q1">
+            <p>1. Which is platform independent language?</p>
+            <div class="options">
+                <div class="option">
+                    <input type="radio" name="q1" id="q1a" value="c++">
+                    <label for="q1a">C++</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="q1" id="q1b" value="c">
+                    <label for="q1b">C</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="q1" id="q1c" value="java">
+                    <label for="q1c">Java</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="q1" id="q1d" value="BASIC">
+                    <label for="q1d">BASIC</label>
+                </div>
+            </div>
+            <p class="warning" id="w1">Please select an answer for this question</p>
+        </div>
+
+        <div class="question" id="q2">
+            <p>2. Which is class of all class in Java?</p>
+            <div class="options">
+                <div class="option">
+                    <input type="radio" name="q2" id="q2a" value="Object">
+                    <label for="q2a">Object</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="q2" id="q2b" value="Math">
+                    <label for="q2b">Math</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="q2" id="q2c" value="System">
+                    <label for="q2c">System</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="q2" id="q2d" value="Graphic">
+                    <label for="q2d">Graphic</label>
+                </div>
+            </div>
+            <p class="warning" id="w2">Please select an answer for this question</p>
+        </div>
+
+        <div class="question" id="q3">
+            <p>3. Frame package is in which package?</p>
+            <div class="options">
+                <div class="option">
+                    <input type="radio" name="q3" id="q3a" value="AWT">
+                    <label for="q3a">AWT</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="q3" id="q3b" value="Applet">
+                    <label for="q3b">Applet</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="q3" id="q3c" value="Lang">
+                    <label for="q3c">Lang</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="q3" id="q3d" value="Swing">
+                    <label for="q3d">Swing</label>
+                </div>
+            </div>
+            <p class="warning" id="w3">Please select an answer for this question</p>
+        </div>
+
+        <div class="question" id="q4">
+            <p>4. Java does not support?</p>
+            <div class="options">
+                <div class="option">
+                    <input type="radio" name="q4" id="q4a" value="Inheritance">
+                    <label for="q4a">Inheritance</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="q4" id="q4b" value="Multiple Inheritance">
+                    <label for="q4b">Multiple Inheritance</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="q4" id="q4c" value="Polymorphism">
+                    <label for="q4c">Polymorphism</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="q4" id="q4d" value="Encryption">
+                    <label for="q4d">Encryption</label>
+                </div>
+            </div>
+            <p class="warning" id="w4">Please select an answer for this question</p>
+        </div>
+
+        <div>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+
+    <div id="result"></div>
+</div>
+
+<script src="exam.js"></script>
+<script>
+function handleSubmit(event) {
+    event.preventDefault(); // Prevent form submission
+
+    const questions = document.querySelectorAll('.question');
+    let allAnswered = true;
+    let correctAnswers = 0;
+
+    questions.forEach((question, index) => {
+        const selectedOption = question.querySelector('input[type="radio"]:checked');
+        const warning = question.querySelector('.warning');
+
+        if (!selectedOption) {
+            warning.style.display = 'block';
+            allAnswered = false;
+        } else {
+            warning.style.display = 'none';
+            // Check if the selected answer is correct
+            if (selectedOption.value === getCorrectAnswer(index + 1)) {
+                correctAnswers++;
+                question.classList.add('correct');
+                question.classList.remove('incorrect');
+            } else {
+                question.classList.add('incorrect');
+                question.classList.remove('correct');
+            }
+        }
+    });
+
+    if (allAnswered) {
+        const resultDiv = document.getElementById('result');
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = `You answered ${correctAnswers} out of ${questions.length} questions correctly.`;
+    }
+}
+
+function getCorrectAnswer(questionNumber) {
+    const answers = {
+        1: 'java',
+        2: 'Object',
+        3: 'AWT',
+        4: 'Multiple Inheritance'
+    };
+    return answers[questionNumber];
+}
+</script>
+</body>
+</html>
