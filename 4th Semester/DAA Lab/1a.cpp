@@ -1,16 +1,15 @@
 #include<bits/stdc++.h>
-#include <chrono>
+#include <ctime>
 using namespace std;
-using namespace chrono;
 
 // Method 1: GCD using Middle School
 int gcdM(int a, int b) {
     int gcd = 1;
-    for (int factor = 2; factor <= min(a, b); factor++) {
-        while (a % factor == 0 && b % factor == 0) {
-            a /= factor;
-            b /= factor;
-            gcd *= factor;
+    for (int i = 2; i <= min(a, b); i++) {
+        while (a % i == 0 && b % i == 0) {
+            a /= i;
+            b /= i;
+            gcd *= i;
         }
         if (a == 1 || b == 1) break;
     }
@@ -20,8 +19,7 @@ int gcdM(int a, int b) {
 // Method 2: Consecutive integer checking method
 int gcdConsecutive(int a, int b) {
     int gcd = 1;
-    int limit = min(a, b);
-    for (int i = 1; i <= limit; i++) {
+    for (int i = 1; i <= min(a,b); i++) {
         if (a % i == 0 && b % i == 0) {
             gcd = i;
         }
@@ -54,49 +52,49 @@ int main() {
     cin >> a >> b;
 
     // GCD using Middle School
-    auto startM = high_resolution_clock::now();
+    clock_t startM = clock();
     int resultM = gcdM(a, b);
-    auto endM = high_resolution_clock::now();
-    auto timeM = duration_cast<nanoseconds>(endM - startM);
+    clock_t endM = clock();
+    double timeM = double(endM - startM) / CLOCKS_PER_SEC;
 
     // GCD using Consecutive Integer Checking
-    auto startC = high_resolution_clock::now();
+    clock_t startC = clock();
     int resultC = gcdConsecutive(a, b);
-    auto endC = high_resolution_clock::now();
-    auto timeC = duration_cast<nanoseconds>(endC - startC);
+    clock_t endC = clock();
+    double timeC = double(endC - startC) / CLOCKS_PER_SEC;
 
     // GCD using Euclidean Algorithm (Iterative)
-    auto startEI = high_resolution_clock::now();
+    clock_t startEI = clock();
     int resultEI = gcdEuclideanIterative(a, b);
-    auto endEI = high_resolution_clock::now();
-    auto timeEI = duration_cast<nanoseconds>(endEI - startEI);
+    clock_t endEI = clock();
+    double timeEI = double(endEI - startEI) / CLOCKS_PER_SEC;
 
     // GCD using Euclidean Algorithm (Recursive)
-    auto startER = high_resolution_clock::now();
+    clock_t startER = clock();
     int resultER = gcdEuclideanRecursive(a, b);
-    auto endER = high_resolution_clock::now();
-    auto timeER = duration_cast<nanoseconds>(endER - startER);
+    clock_t endER = clock();
+    double timeER = double(endER - startER) / CLOCKS_PER_SEC;
 
     cout << fixed << setprecision(9);
-    cout << "GCD using Middle School: " << resultM << ", Time taken: " << timeM.count() << " nanoseconds\n";
-    cout << "GCD using Consecutive Integer Checking: " << resultC << ", Time taken: " << timeC.count() << " nanoseconds\n";
-    cout << "GCD using Euclidean (Iterative): " << resultEI << ", Time taken: " << timeEI.count() << " nanoseconds\n";
-    cout << "GCD using Euclidean (Recursive): " << resultER << ", Time taken: " << timeER.count() << " nanoseconds\n";
+    cout << "GCD using Middle School: " << resultM << ", Time taken: " << timeM << " seconds\n";
+    cout << "GCD using Consecutive Integer Checking: " << resultC << ", Time taken: " << timeC << " seconds\n";
+    cout << "GCD using Euclidean (Iterative): " << resultEI << ", Time taken: " << timeEI << " seconds\n";
+    cout << "GCD using Euclidean (Recursive): " << resultER << ", Time taken: " << timeER << " seconds\n";
 
     // Additional detailed timing for Euclidean algorithms
-    auto startEI2 = high_resolution_clock::now();
+    clock_t startEI2 = clock();
     resultEI = gcdEuclideanIterative(a, b);
-    auto endEI2 = high_resolution_clock::now();
-    auto timeEI2 = duration_cast<nanoseconds>(endEI2 - startEI2);
+    clock_t endEI2 = clock();
+    double timeEI2 = double(endEI2 - startEI2) / CLOCKS_PER_SEC;
 
-    auto startER2 = high_resolution_clock::now();
+    clock_t startER2 = clock();
     resultER = gcdEuclideanRecursive(a, b);
-    auto endER2 = high_resolution_clock::now();
-    auto timeER2 = duration_cast<nanoseconds>(endER2 - startER2);
+    clock_t endER2 = clock();
+    double timeER2 = double(endER2 - startER2) / CLOCKS_PER_SEC;
 
     cout << "Detailed Timing:\n";
-    cout << "Euclidean (Iterative) 2nd run: " << timeEI2.count() << " nanoseconds\n";
-    cout << "Euclidean (Recursive) 2nd run: " << timeER2.count() << " nanoseconds\n";
+    cout << "Euclidean (Iterative) 2nd run: " << timeEI2 << " seconds\n";
+    cout << "Euclidean (Recursive) 2nd run: " << timeER2 << " seconds\n";
 
     return 0;
 }

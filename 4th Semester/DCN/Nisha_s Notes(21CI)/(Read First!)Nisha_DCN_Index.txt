@@ -1,0 +1,119 @@
+DCN_Unit_1_24
+
+Data communication
+Characters of DCN
+Components of DCN
+Transmission Medium
+Protocol
+Simplex
+Half-Duplex
+Full-Duplex
+Networks
+Network Criteria
+Network Reliability
+Network Security
+Physical Structures
+P2P
+Multipoint
+Types of Topology
+Network Types
+History of Internet
+Maturity Levels
+Network Administration
+Network Models
+Encapsulation & Network Layers
+OSI
+
+Unit 4.1
+
+HDLC - High Level Data Link Control 
+NRM - Normal Response Mode
+ABM - Asynchronous Balanced Mode
+Frames
+Frame Format
+Flag
+Control Frames
+Point-to-Point Protocol
+Framing
+Transition Phases
+
+Unit 2
+
+Application of Layers
+Analog and Digital
+Periodic Signal
+Periodic Analog Signals
+Sine Wave
+Frequency
+Conversion of signals
+Wavelength
+Composite Signals
+Bandwidth
+Digital Signals
+Transmission of Digital Signals
+Base Band Transmissions
+Attenuation
+Distortion
+Noise
+Cross Talk
+Impulse
+SNR
+Data Rate Limits
+SNR Q&A
+Shanon Capacity
+Performance
+Throughput
+Latency
+Propagation Time
+Transmission Time
+Queuing Time
+Processing Delay
+Jitter
+Analog to Digital Conversion
+PCM-Pulse code modulation
+Uniform and non-uniform Quantisation
+PCM-Encoder & Decoder
+
+Unit 5
+
+Wireless LAN
+IEEE 802.11
+Basic Service Set
+Extended Service Set
+Types of Stations
+Mac Sublayers
+DCF
+PCF
+Fragmentation
+Types of Frames
+Hidden Station Problem
+Exposed Station Problem
+Bluetooth
+Architecture
+Piconet
+Scatternet
+Layers of Bluetooth
+Radio Layer
+Physical Links
+Frame Format
+L2CAP
+Connecting Devices
+Passive Hubs
+Repeaters.
+Segment
+Active Hubs
+Bridges
+Learning Process
+LOOP Problems
+Spanning Tree
+Source Routing Bridges
+Bridges Connecting Different Lans
+Gateway
+Backbone Networks
+Virtual Lans
+Membership
+MAC Address
+Configuration
+Communication Between Switches
+Table Maintenance
+TDM
