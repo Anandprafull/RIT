@@ -14,11 +14,11 @@ Middle School Procedure
 // Method 1: GCD using Middle School
 int gcdM(int a, int b) {
     int gcd = 1;
-    for (int factor = 2; factor <= min(a, b); factor++) {
-        while (a % factor == 0 && b % factor == 0) {
-            a /= factor;
-            b /= factor;
-            gcd *= factor;
+    for (int i = 2; i <= min(a, b); i++) {
+        while (a % i == 0 && b % i == 0) {
+            a /= i;
+            b /= i;
+            gcd *= i;
         }
         if (a == 1 || b == 1) break;
     }
@@ -28,8 +28,7 @@ int gcdM(int a, int b) {
 // Method 2: Consecutive integer checking method
 int gcdConsecutive(int a, int b) {
     int gcd = 1;
-    int limit = min(a, b);
-    for (int i = 1; i <= limit; i++) {
+    for (int i = 1; i <= min(a, b); i++) {
         if (a % i == 0 && b % i == 0) {
             gcd = i;
         }
@@ -49,11 +48,7 @@ int gcdEuclideanIterative(int a, int b) {
 
 // Method 4: Euclidean algorithm (Recursive Method)
 int gcdEuclideanRecursive(int a, int b) {
-    if (b == 0) {
-        return a;
-    } else {
-        return gcdEuclideanRecursive(b, a % b);
-    }
+    return b == 0 ? a : gcdEuclideanRecursive(b, a % b);
 }
 
 int main() {
@@ -66,28 +61,28 @@ int main() {
     cout << "GCD using Middle School: " << gcdM(a, b) << endl;
     auto end = high_resolution_clock::now();
     auto time_taken = duration_cast<microseconds>(end - start).count();
-    cout << "Time taken: " << fixed << setprecision(6) << time_taken << " microseconds\n\n";
+    cout << "Time taken: " << time_taken << " microseconds\n\n";
 
     // GCD using Consecutive Integer Checking
     start = high_resolution_clock::now();
     cout << "GCD using consecutive integer checking: " << gcdConsecutive(a, b) << endl;
     end = high_resolution_clock::now();
     time_taken = duration_cast<microseconds>(end - start).count();
-    cout << "Time taken: " << fixed << setprecision(6) << time_taken << " microseconds\n\n";
+    cout << "Time taken: " << time_taken << " microseconds\n\n";
 
     // GCD using Euclidean Algorithm (Iterative)
     start = high_resolution_clock::now();
     cout << "GCD using Euclidean algorithm (Iterative): " << gcdEuclideanIterative(a, b) << endl;
     end = high_resolution_clock::now();
     time_taken = duration_cast<microseconds>(end - start).count();
-    cout << "Time taken: " << fixed << setprecision(6) << time_taken << " microseconds\n\n";
+    cout << "Time taken: " << time_taken << " microseconds\n\n";
 
     // GCD using Euclidean Algorithm (Recursive)
     start = high_resolution_clock::now();
     cout << "GCD using Euclidean algorithm (Recursive): " << gcdEuclideanRecursive(a, b) << endl;
     end = high_resolution_clock::now();
     time_taken = duration_cast<microseconds>(end - start).count();
-    cout << "Time taken: " << fixed << setprecision(6) << time_taken << " microseconds\n\n";
+    cout << "Time taken: " << time_taken << " microseconds\n\n";
 
     return 0;
 }
