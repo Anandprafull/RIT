@@ -1,8 +1,7 @@
-#include <chrono>
-#include <iostream>
-#include <vector>
+#include<bits/stdc++.h>
 
 using namespace std;
+using namespace chrono;
 
 void merge(vector<int> &arr, int left, int mid, int right) {
   int n1 = mid - left + 1;
@@ -71,10 +70,10 @@ int main() {
   }
   cout << endl;
 
-  auto start = chrono::high_resolution_clock::now();
+  auto start = high_resolution_clock::now();
   mergeSort(array, 0, array.size() - 1);
-  auto end = chrono::high_resolution_clock::now();
-  auto elapsedTime = chrono::duration_cast<chrono::nanoseconds>(end - start);
+  auto end = high_resolution_clock::now();
+  auto elapsedTime = duration_cast<nanoseconds>(end - start);
 
   cout << "Sorted array Using Merge Sort: ";
   for (int num : array) {

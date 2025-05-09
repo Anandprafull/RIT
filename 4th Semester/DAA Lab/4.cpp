@@ -1,8 +1,7 @@
-#include <chrono>
-#include <iostream>
-#include <vector>
+#include<bits/stdc++.h>
 
 using namespace std;
+using namespace chrono;
 
 int partition(vector<int> &arr, int low, int high) {
   int pivot = arr[high];

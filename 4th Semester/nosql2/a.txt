@@ -1,0 +1,47 @@
+Hbsae
+
+start-hbase.sh
+hbase.shell
+
+create 'table_name', 'cf1', 'cf2'
+list
+describe 'table_name'
+disable 'table_name'
+drop 'table_name'
+
+put 'table_name', 'row1',  'cf1:col1', 'value1'
+put 'table_name', 'row1',  'cf1:col2', 'value2'
+
+get 'table_name', 'row1'
+get 'table_name', 'row1', {COLUMN => 'cf1:col1}
+
+scan 'table_name'
+scan 'table_name', {FILTER => "ValueFilter(=,'binary:value1)}
+scan 'table_name', {FILTER => "SingleColumnValueFilter('cf1', 'col1', =, 'binary:value1')"}
+
+Program 1: Create Table and Insert Data
+
+create 'books', 'info'
+put 'books', '1', 'info:title', '1984'
+put 'books', '1', 'info:author', 'George Orwell'
+put 'books', '2', 'info:title', 'To Kill a Mockingbird'
+put 'books', '2', 'info:author', 'Harper Lee'
+
+Program 2: Retrieve Specific Row
+
+get 'books', '1'
+
+Program 3: Scan Full Table
+
+scan 'books'
+
+Program 4: Update Column Value
+
+put 'books', '2', 'info:title', 'To Kill a Mockingbird (Updated)'
+
+Program 5: Delete a Column and Row
+
+delete 'books', '2', 'info:author'
+deleteall 'books', '2'
+
+

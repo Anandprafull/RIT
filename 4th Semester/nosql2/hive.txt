@@ -1,0 +1,51 @@
+1,John,20,CSE,A
+2,Alice,21,ISE,B
+3,Bob,19,ECE,A
+4,Ravi,22,ME,B
+5,Meena,20,CSE,A
+
+
+hdfs dfs -mkdir /user/hive/warehouse/student_data
+hdfs dfs -put students.csv /user/hive/warehouse/student_data/
+
+
+hive
+
+CREATE TABLE student (
+  id INT,
+  name STRING,
+  age INT,
+  department STRING,
+  grade STRING
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+STORED AS TEXTFILE;
+
+ LOAD DATA INPATH '/user/hive/warehouse/student_data/students.txt' INTO TABLE student;
+
+CREATE EXTERNAL TABLE student (
+  id INT,
+  name STRING,
+  age INT,
+  department STRING,
+  grade STRING
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+STORED AS TEXTFILE;
+
+-- Show all students
+SELECT * FROM student;
+
+-- Count of students in each department
+SELECT department, COUNT(*) FROM student GROUP BY department;
+
+-- Students with grade A
+SELECT * FROM student WHERE grade = 'A';
+
+-- Average age per department
+SELECT department, AVG(age) FROM student GROUP BY department;
+
+
+
