@@ -27,7 +27,7 @@ int gcdM(int a, int b) {
 // Method 2: Consecutive integer checking method
 int gcdConsecutive(int a, int b) {
     int gcd = 1;
-    for (int i = 1; i <= min(a, b); i++) {
+    for (int i = min(a, b); i >= 1; i--) {
         if (a % i == 0 && b % i == 0) {
             gcd = i;
         }

@@ -25,17 +25,40 @@ void printGraph(vector<int> adj[], int V)
 }
 
 // Driver code
+// int main()
+// {
+//     int V = 5;
+//     vector<int> adj[V];
+//     addEdge(adj, 0, 1);
+//     addEdge(adj, 0, 4);
+//     addEdge(adj, 1, 2);
+//     addEdge(adj, 1, 3);
+//     addEdge(adj, 1, 4);
+//     addEdge(adj, 2, 3);
+//     addEdge(adj, 3, 4);
+//     printGraph(adj, V);
+//     return 0;
+// }
+
 int main()
 {
-    int V = 5;
+    int V, E;
+    cout << "Enter the number of vertices: ";
+    cin >> V;
+
+    cout << "Enter the number of edges: ";
+    cin >> E;
+
     vector<int> adj[V];
-    addEdge(adj, 0, 1);
-    addEdge(adj, 0, 4);
-    addEdge(adj, 1, 2);
-    addEdge(adj, 1, 3);
-    addEdge(adj, 1, 4);
-    addEdge(adj, 2, 3);
-    addEdge(adj, 3, 4);
+
+    cout << "Enter the edges (u v) one by one:" << endl;
+    for (int i = 0; i < E; ++i)
+    {
+        int u, v;
+        cin >> u >> v;
+        addEdge(adj, u, v);
+    }
+
     printGraph(adj, V);
     return 0;
 }
