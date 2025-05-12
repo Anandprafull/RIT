@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Convertor</title>
+    <style>
+        body{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+        }
+        label{
+            font-weight: bold;
+            margin-top: 10px;
+            display:block;
+        }
+        button{
+            width:100%;
+            margin-top: 10px;
+        }
+        .result{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="converter">
+        <h2>Currency Converter</h2>
+        <label for="amount">Amount</label>
+        <input type="number" placeholder="Enter amount" id="amount"/>
+        <label for="from">From Currency</label>
+        <select name="" id="from">
+            <option value="USD">USD</option>
+            <option value="JPY">JPY</option>
+            <option value="INR">INR</option>
+            <option value="EUR">EUR</option>
+        </select>
+        <label for="to">To Currency</label>
+        <select name="" id="to">
+            <option value="USD">USD</option>
+            <option value="JPY">JPY</option>
+            <option value="INR">INR</option>
+            <option value="EUR">EUR</option>
+        </select>
+        <button onclick="convert()">Convert</button>
+        <div class="result" id="result"></div>
+    </div>
+    <script>
+        const rates={
+            USD: { USD: 1, JPY: 150, INR: 83, EUR: 0.92 },
+            JPY: { USD: 0.0067, JPY: 1, INR: 0.55, EUR: 0.0061 },
+            INR: { USD: 0.012, JPY: 1.82, INR: 1, EUR: 0.011 },
+            EUR: { USD: 1.09, JPY: 163.5, INR: 90.5, EUR: 1 }
+        };
+        function convert(){
+            const amount=parseFloat(document.getElementById('amount').value);
+            const from=document.getElementById('from').value;
+            const to=document.getElementById('to').value;
+            if(isNaN(amount) || amount <=0){
+                document.getElementById('result').innerText='Please enter a validamount.';
+                return;
+            }
+            const rate=rates[from][to];
+            const converted=(amount*rate).toFixed(2);
+            document.getElementById('result').innerText=`${amount} ${from} = ${converted} ${to}`;
+        }
+    </script>
+</body>
+</html>

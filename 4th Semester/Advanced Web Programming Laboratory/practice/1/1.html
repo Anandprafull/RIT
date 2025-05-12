@@ -1,0 +1,50 @@
+<!-- /*Program 1: Write a HTML program to develop a static website for an online book management system
+tailored specifically for engineering students to view books related to their respective branches.
+The website should include the following pages and features
+Home Page: The home page is divided into three frames:
+Top Frame: This frame displays the logo and the college name, along with navigation links to the Home
+page, Login page, and Registration page.
+Left Frame: This frame includes at least four navigation links of the branches, when clicked, display the
+catalogue of books relevant to each link of the department.
+Right Frame: This frame initially shows a description of the website and will load the pages corresponding
+to the links in the left frame.
+Login Page: The login page should provide fields for the user to enter their login credentials, along with
+submit and reset buttons.
+Registration Page: The registration page is where the student’s details are entered.
+• Name
+• Password
+• Email ID
+• Phone number
+• Gender
+• Dob
+• Language known
+• Submit and cancel button*/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Book Store</title>
+</head>
+<frameset rows="15%,10%,*">
+    <frameset cols="20%,*">
+        <frame name="'f11" src="logo.html" scrolling="no"></frame>
+        <frame name="f12" src="title.html" scrolling="no"></frame>
+    </frameset>
+    <frameset cols="20%,20%,20%,20%,*">
+        <frame name="f21" src="home.html" scrolling="none"></frame>
+        <frame name="f22" src="login.html" scrolling="none"></frame>
+        <frame name="f23" src="reg.html" scrolling="none"></frame>
+        <frame name="f24" src="cat.html" scrolling="none"></frame>
+        <frame name="f25" src="cart.html" scrolling="none"></frame>
+    </frameset>
+    <frameset cols="20%,*">
+        <frame name="f31" src="branches.html"></frame>
+        <frame name="f32"src="homepage.html"></frame>
+    </frameset>
+</frameset>
+<body>
+    
+</body>
+</html>
