@@ -1,0 +1,69 @@
+/* 0/1 Knapsack
+
+Pseudocode : 
+ 
+ function knapsack(W, wt[], val[], n):
+    create a 2D array dp[n+1][W+1]
+    for i = 0 to n:
+        dp[i][0] = 0
+    for j = 0 to W:
+        dp[0][j] = 0
+
+    for i = 1 to n:
+        for j = 1 to W:
+            if wt[i-1] > j:
+                dp[i][j] = dp[i-1][j]
+            else:
+                dp[i][j] = max(val[i-1] + dp[i-1][j - wt[i-1]], dp[i-1][j])
+
+    return dp[n][W]
+
+ Complexity Analysis
+Time Complexity: O(n * W)
+(where n is the number of items and W is the knapsack capacity; each cell in the DP table is filled once)
+
+Space Complexity: O(n * W)
+(for the DP table of size (n+1) x (W+1))
+
+This is the standard dynamic programming solution for the 0/1 Knapsack problem.
+*/
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int knapsack(int W, int wt[], int val[], int n){
+    int dp[n+1][W+1];
+    for(int i=0;i<=n;i++){
+        dp[i][0]=0;
+    }
+    for(int j=0;j<=W;j++){
+        dp[0][j]=0;
+    }
+
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=W;j++){
+            if(wt[i-1]>j){
+                dp[i][j]=dp[i-1][j];
+            } else{
+                dp[i][j]=max(val[i-1]+dp[i-1][j-wt[i-1]],dp[i-1][j]);
+            }
+        }
+    }
+    return dp[n][W];
+}
+
+int main(){
+    int val[]={10,40,30,50};
+    int wt[]={5,4,6,3};
+    int W=10;
+    int n=4;
+    clock_t start=clock();
+    cout<<"Maximum value in knapsack:"<<knapsack(W,wt,val,n)<<endl;
+    clock_t end=clock();
+
+    double time_taken=((double)(end-start))/CLOCKS_PER_SEC *1000;
+    cout<<"Time Taken: "<<time_taken<<"ms"<<endl;
+    return 0;
+}

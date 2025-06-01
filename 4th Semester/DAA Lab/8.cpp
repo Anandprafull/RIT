@@ -75,3 +75,87 @@ int main() {
     cout << "Kruskal's Time: " << (double)(end-start)/CLOCKS_PER_SEC << " seconds\n";
     return 0;
 }
+
+#include <iostream>
+using namespace std;
+const int INF = 1e9; // Represents infinity
+// Maximum number of vertices
+const int MAX = 100;
+// Adjacency matrix to store weights
+int graph[MAX][MAX];
+// Array to track if a vertex is included in MST
+bool visited[MAX];
+// Stores the minimum edge weight to connect to MST
+int key[MAX];
+// To store the parent of each node in MST
+int parent[MAX];
+// Function to find the vertex with the minimum key value not yet included in MST
+int findMinKey(int V) {
+    int min = INF, minIndex;
+
+    for (int v = 0; v < V; v++) {
+        if (!visited[v] && key[v] < min) {
+            min = key[v];
+            minIndex = v;
+        }
+    }
+    return minIndex;
+}
+// Prim's Algorithm implementation
+void primMST(int V) {
+    // Initialize key values and visited array
+    for (int i = 0; i < V; i++) {
+        key[i] = INF;
+        visited[i] = false;
+        parent[i] = -1;
+    }
+    // Start from the first vertex (0-based index)
+    key[0] = 0;
+    // MST will have V vertices
+    for (int count = 0; count < V - 1; count++) {
+        // Pick the minimum key vertex not yet included in MST
+        int u = findMinKey(V);
+        visited[u] = true;
+
+        // Update key and parent for adjacent vertices
+        for (int v = 0; v < V; v++) {
+            // Check if there's an edge, and v is not yet in MST, and weight is smaller than current key
+            if (graph[u][v] && !visited[v] && graph[u][v] < key[v]) {
+                key[v] = graph[u][v];
+                parent[v] = u;
+            }
+        }
+    }
+
+    // Print the MST and total weight
+    int totalWeight = 0;
+    cout << "Edges in MST:\n";
+    for (int i = 1; i < V; i++) {
+        cout << parent[i] << " - " << i << " (weight = " << graph[i][parent[i]] << ")\n";
+        totalWeight += graph[i][parent[i]];
+    }
+    cout << "Total weight of MST = " << totalWeight << endl;
+}
+
+int main() {
+    int V, E;
+    cout << "Enter number of vertices and edges: ";
+    cin >> V >> E;
+
+    // Initialize graph with 0
+    for (int i = 0; i < V; i++)
+        for (int j = 0; j < V; j++)
+            graph[i][j] = 0;
+
+    cout << "Enter edges in format: u v weight (0-based index)\n";
+    for (int i = 0; i < E; i++) {
+        int u, v, w;
+        cin >> u >> v >> w;
+        graph[u][v] = w;
+        graph[v][u] = w; // Undirected graph
+    }
+
+    primMST(V);
+
+    return 0;
+}
