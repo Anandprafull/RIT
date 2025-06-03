@@ -55,9 +55,9 @@ int knapsack(int W, int wt[], int val[], int n){
 }
 
 int main(){
-    int val[]={10,40,30,50};
-    int wt[]={5,4,6,3};
-    int W=10;
+    int val[]={10,20,50,60};
+    int wt[]={2,3,4,5};
+    int W=8;
     int n=4;
     clock_t start=clock();
     cout<<"Maximum value in knapsack:"<<knapsack(W,wt,val,n)<<endl;
