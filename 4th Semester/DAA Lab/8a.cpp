@@ -1,15 +1,48 @@
-#include<iostream>
-using namespace std;
-
-const int INF=1e9;
-const int MAX=100;
-
-int graph[MAX][MAX];
-bool visited[MAX];
-int key[MAX];
-int parent[MAX];
-
-int findMinKey(int V){
-    int min=INF,minIndex;
-    for(int v=0;v<V;v++)if(!vi{}
+#include <iostream>
+#include <climits>
+#define V 6
+const char *sprinklers[V] = {"A", "B", "C", "D", "E", "F"};
+int minKey(int key[], bool mstSet[])
+{
+    int m = INT_MAX, idx = -1;
+    for (int v = 0; v < V; v++)
+        if (!mstSet[v] && key[v] < m)
+            m = key[v], idx = v;
+    return idx;
+}
+void primMST(int g[V][V], int start)
+{
+    int parent[V], key[V];
+    bool mstSet[V];
+    for (int i = 0; i < V; i++)
+        key[i] = INT_MAX, mstSet[i] = 0;
+    key[start] = 0, parent[start] = -1;
+    for (int c = 0; c < V - 1; c++)
+    {
+        int u = minKey(key, mstSet);
+        mstSet[u] = 1;
+        for (int v = 0; v < V; v++)
+            if (g[u][v] && !mstSet[v] && g[u][v] < key[v])
+                parent[v] = u, key[v] = g[u][v];
+    }
+    int total = 0;
+    std::cout << "Edge\tLength\n";
+    for (int i = 0; i < V; i++)
+        if (parent[i] != -1)
+            std::cout << sprinklers[parent[i]] << "-" << sprinklers[i] << "\t" << g[i][parent[i]] << "\n", total += g[i][parent[i]];
+    std::cout << "Total piping needed = " << total << " meters\n";
+}
+int main()
+{
+    int g[V][V] = {
+        // A B C D E F
+        {0, 5, 2, 6, 0, 0}, // A
+        {5, 0, 2, 0, 0, 0}, // B
+        {2, 2, 0, 0, 3, 0}, // C
+        {6, 0, 0, 0, 3, 7}, // D
+        {0, 0, 3, 3, 0, 8}, // E
+        {0, 0, 0, 7, 8, 0}  // F
+    };
+    primMST(g, 5); // Start from F (index 5)
+    return 0;
 }

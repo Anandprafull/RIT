@@ -47,7 +47,6 @@ void fracKnapsack(item items[], int n, int capacity)
     double totalProfit = 0.0;
     sort(items, items + n, cmp);
     cout << "Selected items(profit,weight):" << endl;
-
     for (int i = 0; i < n; i++)
     {
         if (capacity >= items[i].weight)
@@ -65,7 +64,6 @@ void fracKnapsack(item items[], int n, int capacity)
             break;
         }
     }
-
     cout << "Maximum profit: " << totalProfit << endl;
 }
 

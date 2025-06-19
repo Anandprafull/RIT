@@ -1,69 +1,72 @@
-/* 0/1 Knapsack
-
-Pseudocode : 
- 
- function knapsack(W, wt[], val[], n):
-    create a 2D array dp[n+1][W+1]
-    for i = 0 to n:
-        dp[i][0] = 0
-    for j = 0 to W:
-        dp[0][j] = 0
-
-    for i = 1 to n:
-        for j = 1 to W:
-            if wt[i-1] > j:
-                dp[i][j] = dp[i-1][j]
-            else:
-                dp[i][j] = max(val[i-1] + dp[i-1][j - wt[i-1]], dp[i-1][j])
-
-    return dp[n][W]
-
- Complexity Analysis
-Time Complexity: O(n * W)
-(where n is the number of items and W is the knapsack capacity; each cell in the DP table is filled once)
-
-Space Complexity: O(n * W)
-(for the DP table of size (n+1) x (W+1))
-
-This is the standard dynamic programming solution for the 0/1 Knapsack problem.
-*/
-
-
-
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-int knapsack(int W, int wt[], int val[], int n){
-    int dp[n+1][W+1];
-    for(int i=0;i<=n;i++){
-        dp[i][0]=0;
-    }
-    for(int j=0;j<=W;j++){
-        dp[0][j]=0;
-    }
+// Structure to represent an edge in the graph
+struct Edge {
+    int u, v, w; // u: source vertex, v: destination vertex, w: weight
+};
 
-    for(int i=1;i<=n;i++){
-        for(int j=1;j<=W;j++){
-            if(wt[i-1]>j){
-                dp[i][j]=dp[i-1][j];
-            } else{
-                dp[i][j]=max(val[i-1]+dp[i-1][j-wt[i-1]],dp[i-1][j]);
-            }
-        }
-    }
-    return dp[n][W];
+// Comparator function to sort edges by weight
+bool cmp(const Edge &a, const Edge &b) {
+    return a.w < b.w;
 }
 
-int main(){
-    int val[]={10,20,50,60};
-    int wt[]={2,3,4,5};
-    int W=8;
-    int n=4;
-    clock_t start=clock();
-    cout<<"Maximum value in knapsack:"<<knapsack(W,wt,val,n)<<endl;
-    clock_t end=clock();
+// Disjoint Set Union (Union-Find) data structure for cycle detection
+class DSU {
+    int parent[100], rank[100]; // parent and rank arrays for DSU
+public:
+    // Initialize DSU for n elements
+    DSU(int n) {
+        for (int i = 0; i < n; i++) {
+            parent[i] = i;
+            rank[i] = 0;
+        }
+    }
+    // Find the representative (root) of the set containing x
+    int find(int x) {
+        return parent[x] == x ? x : (parent[x] = find(parent[x]));
+    }
+    // Union the sets containing x and y
+    void unite(int x, int y) {
+        int xr = find(x), yr = find(y);
+        if (xr != yr) {
+            if (rank[xr] < rank[yr]) parent[xr] = yr;
+            else if (rank[xr] > rank[yr]) parent[yr] = xr;
+            else parent[yr] = xr, rank[xr]++;
+        }
+    }
+};
 
-    double time_taken=((double)(end-start))/CLOCKS_PER_SEC *1000;
-    cout<<"Time Taken: "<<time_taken<<"ms"<<endl;
+// Function to sort edges using Bubble Sort
+void sortEdges(Edge edges[], int m) {
+    for (int i = 0; i < m - 1; i++)
+        for (int j = 0; j < m - i - 1; j++)
+            if (edges[j].w > edges[j + 1].w) {
+                Edge t = edges[j]; edges[j] = edges[j + 1]; edges[j + 1] = t;
+            }
+}
+
+// Kruskal's algorithm to find the cost of the Minimum Spanning Tree (MST)
+int kruskal(int n, Edge edges[], int m) {
+    sortEdges(edges, m); // Sort edges by weight
+    DSU dsu(n); // Create DSU for n vertices
+    int cost = 0;
+    for (int i = 0; i < m; i++) {
+        // If adding this edge doesn't form a cycle
+        if (dsu.find(edges[i].u) != dsu.find(edges[i].v)) {
+            dsu.unite(edges[i].u, edges[i].v); // Union the sets
+            cost += edges[i].w; // Add edge weight to total cost
+        }
+    }
+    return cost;
+}
+
+int main() {
+    int n = 4, m = 5;
+    // Define the edges of the graph: {u, v, w}
+    Edge edges[5] = {{0, 1, 1}, {1, 2, 2}, {0, 2, 3}, {2, 3, 4}, {1, 3, 5}};
+
+    // Print the cost of the Minimum Spanning Tree
+    cout << "Minimum Cost Spanning Tree: " << kruskal(n, edges, m) << endl;
     return 0;
 }
