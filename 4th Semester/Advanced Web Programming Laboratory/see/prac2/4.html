@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Calendar Generator</h1>
+    Month:
+    <select id="month">
+      <option value="0">January</option>
+      <option value="1">February</option>
+      <option value="2">March</option>
+      <option value="3">April</option>
+      <option value="4">May</option>
+      <option value="5">June</option>
+      <option value="6">July</option>
+      <option value="7">August</option>
+      <option value="8">September</option>
+      <option value="9">October</option>
+      <option value="10">November</option>
+      <option value="11">December</option>
+    </select>
+    Year:
+    <select id="year"></select>
+    <button onclick="generate()">Generate</button>
+    <div id="cal"></div>
+    <script>
+      const year = document.getElementById("year");
+      const currentYear = new Date().getFullYear();
+      for (let i = currentYear - 50; i <= currentYear + 50; i++) {
+        year.innerHTML += `<option value="${i}">${i}</option>`;
+      }
+
+      function generate() {
+        const m = parseInt(document.getElementById("month").value);
+        const y = parseInt(document.getElementById("year").value);
+
+        const days = new Date(y, m + 1, 0).getDate();
+        const start = new Date(y, m, 1).getDay();
+
+        let table = `<table border="1"><tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>`;
+        let day = 1;
+
+        for (let i = 0; i < 6; i++) {
+          table += "<tr>";
+          for (let j = 0; j < 7; j++) {
+            if ((i == 0 && j < start) || day > days) {
+              table += "<td></td>";
+            } else {
+              table += `<td>${day++}</td>`;
+            }
+          }
+          table += "</tr>";
+          if (day > days) break;
+        }
+        document.getElementById("cal").innerHTML = table + "</table>";
+      }
+    </script>
+  </body>
+</html>

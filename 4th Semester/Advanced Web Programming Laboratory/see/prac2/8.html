@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="display:flex; justify-content:center; align-items: center; height:100vh;">
+    <div class="convertor" style="padding:20px; border-radius:8px;">
+        <h2 style="text-align:center; margin-bottom: 20px;">Currency Converter</h2>
+        <label style="display: block;font-weight:bold;margin-bottom: 20px;">Amount</label>
+        <input type="number" id="amount">
+        <label for=""style="display: block;font-weight:bold;margin-bottom: 20px;">From</label>
+            <select name="" id="from"style="margin-bottom: 20px;">
+                <option value="USD">USD</option>
+                <option value="INR">INR</option>
+            </select>
+        <label for="" style="display: block;font-weight:bold;margin-bottom: 20px;">To</label>
+            <select name="" id="to" style="margin-bottom: 20px;">
+                <option value="USD">USD</option>
+                <option value="INR">INR</option>
+            </select>
+        <button onClick="convert()" style="margin-bottom: 20px;display:block;">Convert</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        const rates={
+            USD:{USD:1,INR:82},
+            INR:{USD:1/82,INR:1},
+        };
+        function convert(){
+            const amount=parseFloat(document.getElementById('amount').value);
+            const from=document.getElementById('from').value;
+            const to=document.getElementById('to').value;
+        
+            const rate=rates[from][to];
+            const converted=(amount*rate).toFixed(2);
+            document.getElementById('result').innerText=`${amount} ${from} = ${converted} ${to}`;
+        }
+    </script>
+</body>
+</html>

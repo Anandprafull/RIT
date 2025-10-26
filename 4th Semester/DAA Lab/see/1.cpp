@@ -1,0 +1,65 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+//Middle school Proceddure o(√min(a,b)) Factorization based
+int gcdM(int a, int b){
+    int gcd=1;
+    for(int i=2;i<= min (a,b);i++){
+        while(a%i==0 && b%i==0){
+            a/=i;
+            b/=i;
+            gcd*=i;
+        }
+        if(a==1||b==1) break;
+    }
+    return gcd;
+}
+
+//Euclid's Recursive algo  O(log(min(a,b))) - Extremely efficient
+int gcdE(int a,int b){
+    if(b==0){
+        return a;
+    }else{
+        return  gcdE(b,a%b);
+    }
+}
+
+//cons int check Consecutive Integer: O(min(a,b)) - Brute force checking
+int gcdC(int a,int b){
+    int gcd=1;
+    for(int i=1;i<=min(a,b);i++){{
+        if(a%i==0 && b%i==0){
+            gcd=i;
+        }
+    }}
+    return gcd;
+}
+
+int main(){
+    // int a=25,b=625;
+    int a,b;
+    cin>>a>>b;
+    cout<<"Gcd of "<<a<<" and "<<b<<" is : "<<endl;
+
+
+    clock_t startM=clock();
+    int r1=gcdM(a,b);
+    clock_t endM=clock();
+    double tM=double(endM-startM)/CLOCKS_PER_SEC;
+
+    clock_t startE=clock();
+    int r2=gcdE(a,b);
+    clock_t endE=clock();
+    double tE=double(endE-startE)/CLOCKS_PER_SEC;
+
+    clock_t start=clock();
+    int r3=gcdC(a,b);
+    clock_t end=clock();
+    double tC=double(end-start)/CLOCKS_PER_SEC;
+
+    cout<<"GCDm : "<<r1<<" time :"<<tM*(1e6)<<"uos"<<endl;
+    cout<<"GCDe : "<<r2<<" time :"<<tE*(1e6)<<"us"<<endl;
+    cout<<"GCDc : "<<r3<<" time :"<<tC*(1e6)<<"us"<<endl;
+
+    return 0;
+    }

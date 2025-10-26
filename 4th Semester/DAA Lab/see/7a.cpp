@@ -1,0 +1,44 @@
+#include <iostream>
+#include <queue>
+using namespace std;
+
+int adj[6][6] = {{0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0, 1, 0, 0}, {0, 1, 0, 0, 0, 0}, {1, 1, 0, 0, 0, 0}, {1, 0, 1, 0, 0, 0}};
+int deg[6], vis[6], res[6], k;
+
+void dfs(int v)
+{
+    vis[v] = 1;
+    for (int i = 0; i < 6; i++)
+        if (adj[v][i] && !vis[i])
+            dfs(i);
+    res[k++] = v;
+}
+
+int main()
+{
+    for (int i = 0; i < 6; i++)
+        if (!vis[i])
+            dfs(i);
+    cout << "DFS: ";
+
+    for (int i = k - 1; i >= 0; i--)
+        cout << res[i] << " ";
+
+    for (int i = 0; i < 6; i++)
+        for (int j = 0; j < 6; j++)
+            deg[i] += adj[j][i];
+    queue<int> q;
+    for (int i = 0; i < 6; i++)
+        if (!deg[i])
+            q.push(i);
+    cout << "\nKahn: ";
+    while (!q.empty())
+    {
+        int u = q.front();
+        q.pop();
+        cout << u << " ";
+        for (int i = 0; i < 6; i++)
+            if (adj[u][i] && --deg[i] == 0)
+                q.push(i);
+    }
+}

@@ -1,0 +1,50 @@
+#include <iostream>
+#include <time.h>
+using namespace std;
+
+int a[1000], n;
+
+void merge(int l, int m, int r)
+{
+    int n1 = m - l + 1, n2 = r - m, L[n1], R[n2], i = 0, j = 0, k = l;
+    for (int x = 0; x < n1; x++)
+        L[x] = a[l + x];
+    for (int x = 0; x < n2; x++)
+        R[x] = a[m + 1 + x];
+    while (i < n1 && j < n2)
+        a[k++] = (L[i] <= R[j]) ? L[i++] : R[j++];
+    while (i < n1)
+        a[k++] = L[i++];
+    while (j < n2)
+        a[k++] = R[j++];
+}
+
+void mergeSort(int l, int r)
+{
+    if (l < r)
+    {
+        int m = l + (r - l) / 2;
+        mergeSort(l, m);
+        mergeSort(m + 1, r);
+        merge(l, m, r);
+    }
+}
+
+int main()
+{
+    cout << "Enter n: ";
+    cin >> n;
+    cout << "Enter elements: ";
+    for (int i = 0; i < n; i++)
+        cin >> a[i];
+    cout << "Original: ";
+    for (int i = 0; i < n; i++)
+        cout << a[i] << " ";
+    cout << endl;
+    clock_t t = clock();
+    mergeSort(0, n - 1);
+    cout << "Sorted: ";
+    for (int i = 0; i < n; i++)
+        cout << a[i] << " ";
+    cout << "\nTime: " << double(clock() - t) / CLOCKS_PER_SEC * 1e9 << " ns\n";
+}

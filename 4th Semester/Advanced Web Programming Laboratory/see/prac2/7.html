@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      /* body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .calculator {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        width: 300px;
+      }
+      #display {
+        background: #333;
+        color: white;
+        padding: 20px;
+        margin-bottom: 15px;
+        text-align: right;
+        font-size: 24px;
+        border-radius: 5px;
+        min-height: 30px;
+      } */
+      .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+      /* .btn {
+        padding: 20px;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background: #ddd;
+        color: #333;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <div id="display">0</div>
+      <div class="buttons">
+        <button class="btn" onclick="clear()">C</button>
+        <button class="btn" onclick="del()">DEL</button>
+        <button class="btn" onclick="add('*')">*</button>
+        <button class="btn" onclick="add('/')">/</button>
+        <button class="btn" onclick="add('7')">7</button>
+        <button class="btn" onclick="add('8')">8</button>
+        <button class="btn" onclick="add('9')">9</button>
+        <button class="btn" onclick="add('-')">-</button>
+        <button class="btn" onclick="add('4')">4</button>
+        <button class="btn" onclick="add('5')">5</button>
+        <button class="btn" onclick="add('6')">6</button>
+        <button class="btn" onclick="add('+')">+</button>
+        <button class="btn" onclick="add('1')">1</button>
+        <button class="btn" onclick="add('2')">2</button>
+        <button class="btn" onclick="add('3')">3</button>
+        <button class="btn" onclick="calc()">=</button>
+        <button class="btn" onclick="add('0')">0</button>
+        <button class="btn" onclick="add('.')">.</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    const d = document.getElementById("display");
+    function add(value) {
+      d.innerText = d.innerText === "0" ? value : d.innerText + value;
+    }
+    function clear() {
+      d.innerText = "0";
+    }
+    function del() {
+      d.innerText = d.innerText.slice(0, -1) || "0";
+    }
+    function calc() {
+      try {
+        d.innerText = eval(d.innerText);
+      } catch {
+        d.innerText = "Error";
+      }
+    }
+  </script>
+</html>

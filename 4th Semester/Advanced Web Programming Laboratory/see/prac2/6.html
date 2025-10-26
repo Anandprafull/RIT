@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="start()">
+    <div id="display"></div>
+    <script>
+        function start(){
+            let rng = prompt('Enter range (eg 1-9)');
+            if(rng){
+                let res = rng.split("-");
+                let str=`<table border=1><tr><th>Number</th><th>Square</th><th>Cube</th></tr>`;
+                for(let i = parseInt(res[0]); i <= parseInt(res[1]); i++){
+                    str += "<tr><td>"+i+"</td><td>"+(i*i)+"</td><td>"+(i*i*i)+"</td></tr>";
+                }
+                document.getElementById('display').innerHTML = str+"</table>";
+            }
+        }
+    </script>
+</body>
+</html>

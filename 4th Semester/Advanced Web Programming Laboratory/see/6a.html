@@ -1,0 +1,18 @@
+<html>
+<body onload="sc()">
+<script>
+function sc() {
+    let rng = prompt('Enter range (e.g., 1-10)');
+    let res = rng.split("-");
+    if(res.length != 2) { alert("Invalid range"); return; }
+    let first = parseInt(res[0]), second = parseInt(res[1]);
+    if(first > second) { alert("Invalid range"); return; }
+    let str = "<table border=1><tr><th>Number<th>Square<th>Cube</tr>";
+    for(let i = first; i <= second; i++) {
+        str += `<tr><td>${i}<td>${i*i}<td>${i*i*i}`;
+    }
+    document.write(str + "</table>");
+}
+</script>
+</body>
+</html>

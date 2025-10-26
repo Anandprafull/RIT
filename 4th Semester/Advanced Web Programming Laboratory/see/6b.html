@@ -1,0 +1,25 @@
+<html>
+<body onload="start()">
+<p id="p1" style="font-size:12pt">TEXT-GROWING</p>
+<script>
+let grow = true, size = 12;
+function start() {
+    setInterval(() => {
+        if(grow) {
+            size++;
+            document.getElementById("p1").style.color = "red";
+            if(size >= 50) {
+                grow = false;
+                document.getElementById("p1").innerHTML = "TEXT-SHRINKING";
+                document.getElementById("p1").style.color = "blue";
+            }
+        } else {
+            size--;
+            if(size < 5) return;
+        }
+        document.getElementById("p1").style.fontSize = size + "pt";
+    }, 100);
+}
+</script>
+</body>
+</html>
